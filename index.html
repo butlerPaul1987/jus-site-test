@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>JMCars - Drive Your Dream</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .text-red-500 { color: #d51811 !important; }
+    .bg-red-600 { background-color: #d51811 !important; }
+    .hover\:bg-red-700:hover { background-color: #a2140d !important; }
+    .hover\:shadow-red-600:hover { box-shadow: 0 0 10px #d51811 !important; }
+    .hide-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    .hide-scrollbar {
+      -ms-overflow-style: none;  /* IE/Edge */
+      scrollbar-width: none;     /* Firefox */
+    }
+  </style>
+</head>
+<body class="bg-black text-white">
+
+    <!-- Header -->
+    <header class="bg-black shadow-lg p-4">
+    <div class="flex items-center justify-between max-w-6xl mx-auto">
+        <!-- Hamburger (mobile) -->
+        <button id="menuToggle" class="md:hidden text-white text-3xl focus:outline-none">
+        &#9776;
+        </button>
+
+        <!-- Logo centered -->
+        <div class="flex-1 flex justify-center">
+        <img src="images/logo.png" alt="JMCars Logo" class="h-36 w-auto">
+        </div>
+
+        <!-- Placeholder for spacing on right side -->
+        <div class="w-8 md:hidden"></div>
+    </div>
+
+  <!-- Cars -->
+  <section id="cars" class="py-16 bg-black px-6 opacity-0 translate-y-6 transition-all duration-1000 reveal-on-scroll">
+    <h2 class="text-3xl font-bold text-center mb-10 text-[#d51811]">Featured Stock</h2>
+    <div class="overflow-x-auto scroll-smooth snap-x snap-mandatory">
+      <div class="flex space-x-6 max-w-full pb-4 h-[30rem]">
+
+        <!-- Car 1 -->
+        <div class="min-w-[280px] max-w-[280px] bg-gray-800 rounded-lg shadow hover:shadow-[#d51811] transition flex-shrink-0 snap-center">
+          <img src="images/Cars/1/main.jpg" alt="Audi A1" class="w-full h-48 object-cover">
+          <div class="p-4">
+            <h3 class="text-lg font-semibold mb-1">Audi A1</h3>
+            <p class="text-md text-red-400 mb-1">2015</p>
+            <p class="text-sm text-gray-400 mb-2">Sleek, powerful, and packed with premium features.</p>
+            <p class="text-[#d51811] font-bold text-lg">£6,990</p>
+            <div class="flex justify-center">
+            <button 
+              id="openModal-1"
+              type="button"
+              class="bg-red-600 hover:bg-red-700 transition px-6 py-3 rounded text-white font-semibold mt-4 block text-center"
+            >
+              Enquire
+            </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Car 1 Modal -->
+        <!-- Modal: Hidden by default -->
+        <div id="enquireModal-1" class="fixed inset-0 z-50 bg-black bg-opacity-60 flex items-center justify-center hidden">
+          <div class="bg-white rounded-lg p-8 w-full max-w-[90vw] max-h-[90vh] overflow-y-auto relative shadow-xl">
+            <button id="modalClose-1" class="absolute top-2 right-2 text-gray-500 hover:text-red-600 text-2xl">&times;</button>
+            <div class="flex overflow-x-auto space-x-2 mb-4">
+              <img src="images/Cars/1/main.jpg" alt="Audi A1 Image 1" class="w-full h-64 object-cover rounded mb-2">
+              <img src="images/Cars/1/2.jpg" alt="Audi A5 Image 2" class="w-full h-64 object-cover rounded mb-2">
+              <img src="images/Cars/1/3.jpg" alt="Audi A5 Image 3" class="w-full h-64 object-cover rounded mb-2">
+              <img src="images/Cars/1/4.jpg" alt="Audi A5 Image 4" class="w-full h-64 object-cover rounded mb-2">
+            </div>
+            <h2 class="text-xl font-bold mb-4 text-gray-800">More About the Audi A1</h2>
+            
+            <!-- CAR DETAILS AS BUTTONS or BADGES -->
+             <div>
+                <span class="bg-red-100 text-gray-800 px-3 py-1 rounded-full text-md font-medium">Cost: £6,990</span>
+             </div>
+            <div class="flex flex-wrap gap-2 mb-4">
+              <span class="bg-gray-100 text-gray-800 px-3 py-1 rounded-full text-sm font-medium">Mileage: 85,800 mi</span>
+              <span class="bg-gray-100 text-gray-800 px-3 py-1 rounded-full text-sm font-medium">Fuel: Petrol</span>
+              <span class="bg-gray-100 text-gray-800 px-3 py-1 rounded-full text-sm font-medium">Transmission: Automatic</span>
+              <span class="bg-gray-100 text-gray-800 px-3 py-1 rounded-full text-sm font-medium">Colour: Red</span>
+              <span class="bg-gray-100 text-gray-800 px-3 py-1 rounded-full text-sm font-medium">Brand: Audi</span>
+            </div>
+            <a href="#contact" class="bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded font-semibold block text-center">Contact Us</a>
+          </div>
+        </div>
+
+        <!-- Car 2 - SOLD -->
+        <div class="relative min-w-[280px] max-w-[280px] bg-gray-800 rounded-lg shadow hover:shadow-[#d51811] transition flex-shrink-0 snap-center overflow-hidden">
+          <img src="images/Cars/2/main.jpg" alt="BMW 3 Series" class="w-full h-48 object-cover">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent z-10"></div>
+          <div class="absolute top-2 left-2 bg-[#d51811] text-white text-xs font-bold px-3 py-1 rounded z-20 shadow-md">SOLD</div>
+          <div class="p-4 relative z-20">
+            <h3 class="text-lg font-semibold mb-1">BMW 3 Series</h3>
+            <p class="text-md text-red-400 mb-1">2010</p>
+            <p class="text-sm text-gray-400 mb-2">Balance of performance and executive class.</p>
+            <p class="text-[#d51811] font-bold text-lg line-through opacity-70">£4,450</p>
+          </div>
+        </div>
+
+        <!-- Car 3 -->
+        <div class="min-w-[280px] max-w-[280px] bg-gray-800 rounded-lg shadow hover:shadow-[#d51811] transition flex-shrink-0 snap-center">
+          <img src="images/Cars/3/main.jpg" alt="Audi Q5" class="w-full h-48 object-cover">
+          <div class="p-4">
+            <h3 class="text-lg font-semibold mb-1">Mercedes A180</h3>
+            <p class="text-md text-red-400 mb-1">2009</p>
+            <p class="text-sm text-gray-400 mb-2">Refined interior, AWD, and smart tech.</p>
+            <p class="text-[#d51811] font-bold text-lg">£4,250</p>
+            <div class="flex justify-center">
+              <button 
+                id="openModal-3"
+                type="button"
+                class="bg-red-600 hover:bg-red-700 transition px-6 py-3 rounded text-white font-semibold mt-4 block text-center"
+              >
+                Enquire
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Car 3 Modal -->
+        <!-- Modal: Hidden by default -->
+        <div id="enquireModal-3" class="fixed inset-0 z-50 bg-black bg-opacity-60 flex items-center justify-center hidden">
+          <div class="bg-white rounded-lg p-8 w-full max-w-[90vw] max-h-[90vh] overflow-y-auto relative shadow-xl">
+            <button id="modalClose-3" class="absolute top-2 right-2 text-gray-500 hover:text-red-600 text-2xl">&times;</button>
+            <div class="flex overflow-x-auto space-x-2 mb-4">
+              <img src="images/Cars/3/main.jpg" alt="Audi A5 Image 1" class="w-full h-64 object-cover rounded mb-2">
+              <img src="images/Cars/3/2.jpg" alt="Audi Q5 Image 2" class="w-full h-64 object-cover rounded mb-2">
+              <img src="images/Cars/3/3.jpg" alt="Audi Q5 Image 3" class="w-full h-64 object-cover rounded mb-2">
+              <img src="images/Cars/3/4.jpg" alt="Audi Q5 Image 4" class="w-full h-64 object-cover rounded mb-2">
+            </div>
+            <h2 class="text-xl font-bold mb-4 text-gray-800">More About the Mercedes A180</h2>
+            
+            <!-- CAR DETAILS AS BUTTONS or BADGES -->
+             <div>
+                <span class="bg-red-100 text-gray-800 px-3 py-1 rounded-full text-md font-medium">Cost: £6,990</span>
+             </div>
+            <div class="flex flex-wrap gap-2 mb-4">
+              <span class="bg-gray-100 text-gray-800 px-3 py-1 rounded-full text-sm font-medium">Mileage: 101,800 mi</span>
+              <span class="bg-gray-100 text-gray-800 px-3 py-1 rounded-full text-sm font-medium">Fuel: Diesel</span>
+              <span class="bg-gray-100 text-gray-800 px-3 py-1 rounded-full text-sm font-medium">Transmission: Automatic</span>
+              <span class="bg-gray-100 text-gray-800 px-3 py-1 rounded-full text-sm font-medium">Colour: Silver</span>
+              <span class="bg-gray-100 text-gray-800 px-3 py-1 rounded-full text-sm font-medium">Brand: Mercedes</span>
+            </div>
+            <a href="#contact" class="bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded font-semibold block text-center">Contact Us</a>
+          </div>
+        </div>
+
+        <!-- Car 4 -->
+        <div class="relative min-w-[280px] max-w-[280px] bg-gray-800 rounded-lg shadow hover:shadow-[#d51811] transition flex-shrink-0 snap-center overflow-hidden">
+          <img src="images/Cars/4/main.jpg" alt="BMW 3 Series" class="w-full h-48 object-cover">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent z-10"></div>
+          <div class="absolute top-2 left-2 bg-[#d51811] text-white text-xs font-bold px-3 py-1 rounded z-20 shadow-md">BEING PROCESSED</div>
+          <div class="p-4 relative z-20">
+            <h3 class="text-lg font-semibold mb-1">Volkswagen Polo</h3>
+            <p class="text-md text-red-400 mb-1">2014</p>
+            <p class="text-sm text-gray-400 mb-2">Balance of performance and executive class.</p>
+            <p class="text-[#d51811] font-bold text-lg line-through opacity-70">£8,450</p>
+          </div>
+        </div>
+
+        <!-- Car 5 -->
+        <div class="min-w-[280px] max-w-[280px] bg-gray-800 rounded-lg shadow hover:shadow-[#d51811] transition flex-shrink-0 snap-center">
+          <img src="images/Cars/5/main.jpg" alt="Audi Q5" class="w-full h-48 object-cover">
+          <div class="p-4">
+            <h3 class="text-lg font-semibold mb-1">BMW M1</h3>
+            <p class="text-md text-red-400 mb-1">2017</p>
+            <p class="text-sm text-gray-400 mb-2">Refined interior, AWD, and smart tech.</p>
+            <p class="text-[#d51811] font-bold text-lg">£28,250</p>
+          </div>
+        </div>
+
+        <!-- Car 6 -->
+        <div class="min-w-[280px] max-w-[280px] bg-gray-800 rounded-lg shadow hover:shadow-[#d51811] transition flex-shrink-0 snap-center">
+          <img src="images/Cars/6/main.jpg" alt="Audi Q5" class="w-full h-48 object-cover">
+          <div class="p-4">
+            <h3 class="text-lg font-semibold mb-1">Hummer</h3>
+            <p class="text-md text-red-400 mb-1">2009</p>
+            <p class="text-sm text-gray-400 mb-2">Balance of performance and executive class.</p>
+            <p class="text-[#d51811] font-bold text-lg line-through opacity-70">£35,250</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+    <!-- Contact Cards -->
+    <section class="reveal-on-scroll opacity-0 translate-y-4 transition-all duration-1000">
+        <div class="grid grid-cols-2 sm:grid-cols-2 gap-2 mt-12 max-w-md mx-auto">
+        <!-- Call Card -->
+        <a href="tel:+441234567890" class="flex items-center bg-gray-900 hover:bg-gray-800 transition p-6 rounded-lg shadow-lg border border-gray-700">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-[#d51811] mr-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.6a1 1 0 01.95.68l1.1 3.3a1 1 0 01-.27 1.1L9.4 9.6a15.95 15.95 0 006 6l1.52-1.52a1 1 0 011.1-.27l3.3 1.1a1 1 0 01.68.95V19a2 2 0 01-2 2h-1C9.163 21 3 14.837 3 7V5z" />
+            </svg>
+            <div>
+            <p class="text-white font-bold text-lg">Call Us</p>
+            <p class="text-gray-300 text-sm">01234 567 890</p>
+            </div>
+        </a>
+
+        <!-- WhatsApp Card -->
+        <a href="https://wa.me/441234567890" target="_blank" class="flex items-center bg-gray-900 hover:bg-gray-800 transition p-6 rounded-lg shadow-lg border border-gray-700">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-green-500 mr-4" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12.04 2.003A9.93 9.93 0 002.01 12.03a9.86 9.86 0 001.37 5.03L2 22l5.05-1.32a9.93 9.93 0 004.98 1.29c5.51 0 10-4.49 10-10s-4.49-9.97-9.99-9.97zm.01 18.02a7.95 7.95 0 01-4.06-1.1l-.29-.17-3 0.79.8-2.92-.18-.3a7.93 7.93 0 01-1.15-4.11c0-4.42 3.59-8.01 8.01-8.01s8.01 3.59 8.01 8.01-3.59 8.01-8.01 8.01zm4.41-5.62c-.24-.12-1.4-.69-1.62-.77-.22-.08-.38-.12-.54.12s-.62.76-.76.92c-.14.16-.28.18-.52.06a6.61 6.61 0 01-1.94-1.2 7.31 7.31 0 01-1.36-1.69c-.14-.24-.01-.37.1-.49.1-.1.24-.28.36-.42.12-.14.16-.24.24-.4.08-.16.04-.3-.02-.42-.06-.12-.54-1.3-.74-1.77-.2-.48-.4-.41-.54-.42h-.46c-.16 0-.42.06-.64.3s-.84.82-.84 2c0 1.18.86 2.32.98 2.48.12.16 1.68 2.56 4.1 3.58.57.25 1.02.4 1.37.52.57.18 1.1.15 1.5.09.46-.07 1.4-.58 1.6-1.13.2-.54.2-1 .14-1.1-.06-.1-.22-.16-.46-.28z"/>
+            </svg>
+            <div>
+            <p class="text-white font-bold text-lg">WhatsApp</p>
+            <p class="text-gray-300 text-sm">01234 567 890</p>
+            </div>
+        </a>
+        </div>
+
+        <!-- Trustpilot Section -->
+        <div class="max-w-5xl mx-auto text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-4 text-[#d51811]">Trusted by Hundreds of Happy Drivers</h2>
+            <p class="text-gray-400 mb-10 text-lg">Our commitment to quality and service is reflected in our reviews on Trustpilot.</p>
+
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-6">
+            <!-- Logo -->
+            <img src="images/trustpilot-logo.png" alt="Trustpilot Logo" class="h-10">
+
+            <!-- Stars + Text -->
+            <div class="text-left">
+                <p class="text-sm text-gray-300">Rated <span class="text-green-400 font-bold">4.8 / 5</span> on Trustpilot</p>
+                <div class="flex mt-1">
+                <!-- 5 Stars -->
+                <svg class="w-5 h-5 text-green-400" fill="currentColor" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.122-6.545L.488 6.91l6.574-.955L10 0l2.938 5.955 6.574.955-4.756 4.635 1.122 6.545z"/></svg>
+                <svg class="w-5 h-5 text-green-400" fill="currentColor" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.122-6.545L.488 6.91l6.574-.955L10 0l2.938 5.955 6.574.955-4.756 4.635 1.122 6.545z"/></svg>
+                <svg class="w-5 h-5 text-green-400" fill="currentColor" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.122-6.545L.488 6.91l6.574-.955L10 0l2.938 5.955 6.574.955-4.756 4.635 1.122 6.545z"/></svg>
+                <svg class="w-5 h-5 text-green-400" fill="currentColor" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.122-6.545L.488 6.91l6.574-.955L10 0l2.938 5.955 6.574.955-4.756 4.635 1.122 6.545z"/></svg>
+                <svg class="w-5 h-5 text-green-400" fill="currentColor" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.122-6.545L.488 6.91l6.574-.955L10 0l2.938 5.955 6.574.955-4.756 4.635 1.122 6.545z"/></svg>
+                </div>
+            </div>
+            </div>
+
+            <!-- Optional CTA -->
+            <a href="https://uk.trustpilot.com/review/YOURDOMAIN.com" target="_blank" class="mt-8 inline-block text-sm text-[#d51811] hover:underline">Read our reviews on Trustpilot →</a>
+        </div>
+    </section>
+
+  <!-- Footer -->
+  <footer class="bg-black text-white py-6">
+    <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between px-6 text-sm">
+      <p>&copy; 2025 JMCars. All rights reserved.</p>
+      <div class="flex space-x-4 mt-2 md:mt-0">
+        <a href="#" class="hover:text-red-500">Facebook</a>
+        <a href="#" class="hover:text-red-500">Instagram</a>
+        <a href="#" class="hover:text-red-500">Twitter</a>
+      </div>
+    </div>
+  </footer>
+
+<!--Javascript modal stuff -->
+<script>
+  // Intersection Observer logic
+  const revealElements = document.querySelectorAll('.reveal-on-scroll');
+
+  const observer = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      if(entry.isIntersecting){
+        entry.target.classList.add('opacity-100');
+        entry.target.classList.remove('opacity-0');
+        observer.unobserve(entry.target); // Optional: Remove once revealed
+      }
+    });
+  }, {
+    threshold: 0.1 // 10% of the element is visible
+  });
+
+  revealElements.forEach(el => {
+    observer.observe(el);
+  });
+
+  // Hamburger menu toggle
+  const menuToggle = document.getElementById('menuToggle');
+  const mobileMenu = document.getElementById('mobileMenu');
+
+  menuToggle.addEventListener('click', () => {
+    mobileMenu.classList.toggle('hidden');
+  });
+
+  // Car 1
+  const openModalBtn1 = document.getElementById('openModal-1');
+  const modal1 = document.getElementById('enquireModal-1');
+  const closeModalBtn1 = document.getElementById('modalClose-1');
+
+  openModalBtn1.addEventListener('click', () => {
+    modal1.classList.remove('hidden');
+  });
+
+  closeModalBtn1.addEventListener('click', () => {
+    modal1.classList.add('hidden');
+  });
+
+  modal1.addEventListener('click', function (e) {
+    if (e.target === modal1) {
+      modal1.classList.add('hidden');
+    }
+  });
+
+  // Car 3
+  const openModalBtn3 = document.getElementById('openModal-3');
+  const modal3 = document.getElementById('enquireModal-3');
+  const closeModalBtn3 = document.getElementById('modalClose-3');
+
+  openModalBtn3.addEventListener('click', () => {
+    modal3.classList.remove('hidden');
+  });
+
+  closeModalBtn3.addEventListener('click', () => {
+    modal3.classList.add('hidden');
+  });
+
+  modal3.addEventListener('click', function (e) {
+    if (e.target === modal3) {
+      modal3.classList.add('hidden');
+    }
+  });
+</script>
+</body>
+</html>
